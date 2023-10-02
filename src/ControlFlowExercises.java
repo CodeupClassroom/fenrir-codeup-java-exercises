@@ -119,6 +119,43 @@ public class ControlFlowExercises {
             }
         }
         while(continueFlag);
+
+        //    Grades App:
+
+        boolean continueFlagGrade = false;
+
+        do {
+            System.out.println("Hello ! please give me your grade (0 - 100)");
+
+            int userGrade = localScanner.nextInt();
+
+            if (userGrade > 88) {
+                System.out.println("You got an A");
+            } else if (userGrade > 80) {
+                System.out.println("You got a B");
+            } else if (userGrade > 67) {
+                System.out.println("You got a C");
+            } else if (userGrade > 60) {
+                System.out.println("You got a D");
+            } else {
+                System.out.println("You need to study more :(");
+            }
+
+            System.out.println("Do you have another grade to convert? YES/NO");
+            localScanner.nextLine();
+            String userAnswer = localScanner.nextLine();
+
+            if (userAnswer.toLowerCase().equals("yes")) {
+                continueFlagGrade = true;
+            } else {
+                continueFlagGrade = false;
+            }
+        }
+        while(continueFlagGrade);
+
     }
+
+
+
 
 }
