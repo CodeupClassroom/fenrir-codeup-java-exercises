@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
 
     public static void main(String[] args) {
+        Scanner localScanner = new Scanner(System.in);
+
 //        Loop Basics
 //
 //        While
@@ -59,6 +63,7 @@ public class ControlFlowExercises {
 //
 //        Refactor the previous two exercises to use a for loop instead.
 
+        System.out.println("for loops:");
         for(int i = 0; i <= 100; i+=2){
             System.out.println(i);
         }
@@ -73,7 +78,7 @@ public class ControlFlowExercises {
 
 
 
-//Fizzbuzz
+    //Fizzbuzz
         System.out.println("Fizzbuzz Loop:");
         for (int i = 0; i < 100; i++){
 
@@ -88,7 +93,32 @@ public class ControlFlowExercises {
             }
         }
 
+//        Display a table of powers:
 
+        boolean continueFlag = false;
+
+        do {
+            System.out.println("What number would you like to go up to?");
+            int userInt = localScanner.nextInt();
+            System.out.println();
+            System.out.println("Here is your table!");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            for (int i = 1; i <= userInt; i++) {
+                System.out.printf("%6d | %7d | %5d%n", i, i * i, i * i * i);
+            }
+
+            System.out.println("Would you like to go again? YES/NO");
+            localScanner.nextLine();
+            String answer = localScanner.nextLine();
+
+            if (answer.toLowerCase().equals("yes")) {
+                continueFlag = true;
+            } else {
+                continueFlag = false;
+            }
+        }
+        while(continueFlag);
     }
 
 }
