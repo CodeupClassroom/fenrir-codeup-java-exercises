@@ -1,5 +1,7 @@
-public class MethodsExercises {
+import java.util.Scanner;
 
+public class MethodsExercises {
+    public static Scanner localScanner = new Scanner(System.in);
     public static int addition(int x, int y){
 
         return x + y;
@@ -49,6 +51,30 @@ public class MethodsExercises {
         return recursionMultiply(operand, count, bucket);
     }
 
+//    Create a method that validates that user input is in a certain range and returns that input as an integer if it is within the given range. If not, prompt the user to input their number again until the input is within range.
+//The method signature should look like this:
+//public static int getInteger(int min, int max);
+//and is used like this:
+//System.out.print("Enter a number between 1 and 10: ");
+//int userInput = getInteger(1, 10);
+//If the input is invalid, prompt the user again.
+//
+//Hint: recursion might be helpful here!
+
+    public static int getInteger(int min, int max){
+        System.out.printf("Please enter a number between %d and %d%n", min, max);
+
+        int userIntAnswer = localScanner.nextInt();
+
+        if(userIntAnswer < min || userIntAnswer > max){
+            System.out.println("Incorrect input detected - please try again");
+
+            return getInteger(min, max);
+        }
+
+        return userIntAnswer;
+    }
+
     public static void main(String[] args) {
 
         System.out.println(addition(2, 4));
@@ -60,6 +86,8 @@ public class MethodsExercises {
         System.out.println(multiplyLoop(4));
         System.out.println(recursionMultiply(4, 4, 0));
         System.out.println(recursionMultiply(10, 10, 0));
+
+        System.out.println(getInteger(40, 45));
     }
 
 
