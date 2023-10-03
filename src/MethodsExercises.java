@@ -68,7 +68,8 @@ public class MethodsExercises {
     public static void factorialPrint(){
        int myUsersNum = getInteger(1, 10);
        String myOutput = "1";
-       int mathBucket = 1;
+       long mathBucket = 1;
+
 
         for (int i = 1; i <= myUsersNum; i++) {
             if(i == 1){
@@ -81,6 +82,14 @@ public class MethodsExercises {
 
             System.out.printf("%d! = %-16s = %d%n", i, myOutput,mathBucket);
 
+        }
+
+        localScanner.nextLine();
+        System.out.println("Do you want to do it again?");
+        String userContinue = localScanner.nextLine();
+
+        if(userContinue.toLowerCase().equals("yes")){
+            factorialPrint();
         }
 
     }
