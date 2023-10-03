@@ -65,8 +65,28 @@ public class MethodsExercises {
         return userIntAnswer;
     }
 
-    public static void main(String[] args) {
+    public static void factorialPrint(){
+       int myUsersNum = getInteger(1, 10);
+       String myOutput = "1";
+       int mathBucket = 1;
 
+        for (int i = 1; i <= myUsersNum; i++) {
+            if(i == 1){
+            System.out.printf("%d! = %-16s = %d%n", i, myOutput, mathBucket);
+            continue;
+            }
+
+            mathBucket *= i;
+            myOutput += " x " + i;
+
+            System.out.printf("%d! = %-16s = %d%n", i, myOutput,mathBucket);
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        factorialPrint();
     }
 
 
