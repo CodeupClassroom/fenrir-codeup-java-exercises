@@ -13,7 +13,7 @@ public class Scratch {
 
         System.out.println(myCar.getVinNum());
 
-        System.out.println(myCar.vinNum);
+//        System.out.println(myCar.vinNum);
     }
 
 }
