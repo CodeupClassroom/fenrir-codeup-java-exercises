@@ -11,6 +11,9 @@ public class Car {
     public String model;
     public int year;
 
+    protected String ownerName;
+    private String vinNum;
+
     public void honkHorn(){
         System.out.printf("%s %s honks its horn%n", make, model);
     }
@@ -30,14 +33,53 @@ public class Car {
     //Constructors - all constructors are methods, all methods can be overloaded.
 
     //Third example: car constructor method that auto-increments static carInventoryCount when each car is made
+    public Car(){
+        System.out.println("This method is being called");
+//        Let's add in this functionality: Every time a car is instantiated. . autoIncrement the static inventory count
+        carInventoryCount++;
+        System.out.printf("The current inventory is %d%n", carInventoryCount);
+    }
 
     //Fourth example: overloading constructor to allow for missing model / year
+    public Car(String carMake, int carYear){
+//        make = carMake;
+//        year = carYear;
+//        model = "unknown";
+        this(carMake, "unknown", carYear);
+    }
+
+    //Oh man I dont know the year - let's get a constructor
+    public Car(String carMake, String carModel){
+//        make = carMake;
+//        year = 0;
+//        model = carModel;
+//
+        this(carMake, carModel, 0);
+
+    }
+    //One more constructor: To take in all values and assign them
+    public Car(String carMake, String carModel, int carYear){
+        this.make = carMake;
+        this.year = carYear;
+        this.model = carModel;
+    }
 
     //This - think of it as saying ME, MYSELF, THIS object.
 
     //Fifth example: logCarInfo()
+    public void logCarInfo(){
+        System.out.printf("The current object is a %s make of a %s model of a %d%n", this.make, this.model, this.year);
+    }
 
     //Visibility - let's set up a private String that is carOwner and set up a small application running class called dealershipApp to see if we can access info in the other class.
+
+    public String getVinNum(){
+        return this.vinNum;
+    }
+
+    public void setVinNum(String vinNum){
+        this.vinNum = vinNum;
+    };
 
     public static void main(String[] args) {
 //        I want to make a car - how do? DataType variableName = new dataType();
@@ -72,19 +114,43 @@ public class Car {
 //        Look: Cant even TRY to make my own version of Math! It's locked down! Whoa
 //        Math myMath = new Math();
 
-        Car.carInventoryCount = 0;
+//        Car.carInventoryCount = 0;
 
 //        "Okay Gonzo! Sir, we have TWO NEW CARS ON THE LOT - kennysCar and gillysCar"
 //          "ADD THEM TO THE INVENTORY" gonzo says politely as usual
 
-        carInventoryCount++;
+//        carInventoryCount++;
 
         System.out.println("What is our inventory: " + carInventoryCount);
 
-        carInventoryCount++;
+//        carInventoryCount++;
 
-        System.out.println("What is our inventory: " + carInventoryCount);
+//        System.out.println("What is our inventory: " + carInventoryCount);
 
+//        Making a car with our new overloaded constructor
+
+        Car mysteryCar = new Car("Suzuki", 2001);
+
+        System.out.println(mysteryCar.make);
+        System.out.println(mysteryCar.year);
+        System.out.println(mysteryCar.model);
+
+        Car gonzosCar = new Car("Toyota", "Camry", 2016);
+
+        System.out.println(gonzosCar.make);
+        System.out.println(gonzosCar.model);
+        System.out.println(gonzosCar.year);
+
+        //Okay: Let's try out the 'this' keyword we programmed into the logCarInfo() method
+
+        kennysCar.logCarInfo();
+        gonzosCar.logCarInfo();
+        gillysCar.logCarInfo();
+
+        //Using dot notation to add protected/private fields for example
+
+        gonzosCar.ownerName = "Gonzalo Ovalle";
+        gonzosCar.vinNum = "HT345L1123009381";
 
     }
 

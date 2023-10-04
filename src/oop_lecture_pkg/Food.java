@@ -59,6 +59,8 @@ public class Food {
 
         System.out.println("Recipes total so far: " + numRecipes);
 
+        System.out.printf("Tonight we're making a %s - it needs the following: %s, it serves %d with %d calories per serving", jessicasFood.name, jessicasFood.ingredients, jessicasFood.servingSize, jessicasFood.caloriesTotal);
+
     }
 
 }
