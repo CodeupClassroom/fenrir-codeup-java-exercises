@@ -7,7 +7,7 @@ public class Person {
     }
 
     public void sayHello(){
-        System.out.printf("Hello there %s!", this.name);
+        System.out.printf("Hello there %s!%n", this.name);
     }
 
     public Person(String name) {
