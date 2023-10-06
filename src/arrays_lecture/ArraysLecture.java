@@ -65,7 +65,7 @@ public class ArraysLecture {
 
         Arrays.sort(numArray);
 
-        System.out.println(Arrays.toString(numArray));
+//        System.out.println(Arrays.toString(numArray));
 //        for (int num : numArray) {
 //            System.out.println(num);
 //        }
@@ -93,6 +93,45 @@ public class ArraysLecture {
 //        for (String dog : dogArray2) {
 //            System.out.println(dog);
 //        }
+
+        //Matrices/2 Dimensional Arrays/Multidimensional Arrays
+
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9, 10, 11, 12},
+                {13, 14, 15}
+        };
+
+//        System.out.println(matrix[2][4]);
+
+        int[][][] arr = {
+                {
+                    { 1, 2, 9 }, { 3, 4 }
+                },
+                {
+                    { 5, 6 }, { 7, 8 }
+                },
+                {
+                    { 10, 11 }, { 12, 13, 14 }
+                }
+        };
+
+//        System.out.println(arr[0][1][1]);
+
+                for (int i = 0; i < arr.length; i++) {
+
+                    for (int j = 0; j < arr[i].length; j++) {
+
+                        for (int k = 0; k < arr[i][j].length; k++) {
+
+                            System.out.print(arr[i][j][k] + " ");
+                        }
+
+                        System.out.println();
+                    }
+                    System.out.println();
+                }
 
 
     }
