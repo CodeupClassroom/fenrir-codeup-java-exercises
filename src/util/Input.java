@@ -1,4 +1,5 @@
-import java.awt.desktop.SystemEventListener;
+package util;
+
 import java.util.Scanner;
 
 public class Input {
@@ -17,9 +18,9 @@ public class Input {
         String userResponse = scanner.nextLine();
         return userResponse.equalsIgnoreCase("y") || userResponse.equalsIgnoreCase("yes");
     }
-    public int getInt(int min, int max){
-        return MethodsExercises.getInteger(min, max);
-    }
+//    public int getInt(int min, int max){
+//        return MethodsExercises.getInteger(min, max);
+//    }
     public int getInt(){
         int returnInt = scanner.nextInt();
         return returnInt;
@@ -49,10 +50,10 @@ public class Input {
 
         boolean booleTest = testInput.yesNo();
         System.out.println(booleTest);
-
-        int testInt = testInput.getInt(10,50);
-
-        System.out.println(testInt);
+//
+//        int testInt = testInput.getInt(10,50);
+//
+//        System.out.println(testInt);
 
         testInput.getString();
         int testInt2 = testInput.getInt();
