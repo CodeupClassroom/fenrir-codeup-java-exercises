@@ -1,4 +1,4 @@
-package oop_lecture_pkg;
+package oop_first_lecture;
 
 public class Car {
     //Classes let us define custom objects - imagine it as a blueprint, template, or character sheet to be followed

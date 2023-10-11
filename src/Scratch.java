@@ -1,4 +1,4 @@
-import oop_lecture_pkg.Car;
+import oop_first_lecture.Car;
 
 public class Scratch {
 

@@ -1,4 +1,4 @@
-package oop_lecture_pkg;
+package oop_first_lecture;
 
 public class Dealership {
 
