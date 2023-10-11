@@ -46,6 +46,12 @@ public class GradesApplication {
                 System.out.printf(" |%s| ", username);
             }
 
+
+//            for (int i = 0; i < students.keySet().size() ; i++) {
+//
+//                System.out.printf(" |%s| ", students.keySet().toArray()[i]);
+//            }
+
             System.out.printf("%n%n");
             System.out.println("WHAT STUDENT INFORMATION DO YOU WISH FOR:");
             String searchToken = localScanner.nextLine();
