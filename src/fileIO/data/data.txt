@@ -1,0 +1,6 @@
+Larry : 7
+Curly : 12
+Moe : 5
+Clifford : 15
+Fenny : 2
+Javascript : 10
